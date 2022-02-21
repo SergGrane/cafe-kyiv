@@ -1,0 +1,39 @@
+    <!-- ======= About Section ======= -->
+     {% load static %}
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+            {% for item in about %}
+            <div class="col-lg-5 align-items-stretch video-box" style='background-image: url({% static "img/about.jpg" %});'>
+            <a href=href={{ item.about_video }} class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+
+
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+            <div class="content">
+              <h3>{{ item.name}} <strong>{{ item.head1}}</strong></h3>
+              <p>
+                {{ item.head2 }}
+              </p>
+              <p class="fst-italic">
+                {{ item.head3 }}
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> {{ item.row1 }}</li>
+                <li><i class="bx bx-check-double"></i> {{ item.row2 }}</li>
+                <li><i class="bx bx-check-double"></i> {{ item.row3 }}</li>
+              </ul>
+              <p>
+                {{ item.bottom }}
+              </p>
+            </div>
+
+          </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
