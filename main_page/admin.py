@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category,Dish,Why,Events,About,Chefs,Gallery,Contactus,Contmail,Contphone,UserReservation,TestoMonial
+from .models import Category,Dish,Why,Events,About,Chefs,Gallery,Contactus,Contmail,Contphone,UserReservation,\
+    TestoMonial, Slides, BestTest
 
 #admin.site.register(Category)
 @admin.register(Category)
@@ -62,5 +63,15 @@ admin.site.register(UserReservation)
 class TestAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'mail', 'subj','message', 'date', 'is_answered']
     list_filter = ['name','date','subj']
+
+@admin.register(Slides)
+class SlideAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'rows']
+    list_filter = ['name']
+
+@admin.register(BestTest)
+class BestTestAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'profession','message',  'is_visible']
+    list_filter = ['name','profession']
 
 

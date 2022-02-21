@@ -2,7 +2,11 @@
 {% block content %}
 <section id ='reserves'>
     <div class="col-md-10 col-md-offset-1">
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     {% for item in lst %}
      <div class ="row">
         <div class="col-md-3"> <a href="{% url 'manager:update_res' pk=item.pk %}"> <button type="button" class="btn btn-primary"> Close reservation</button></a> </div>

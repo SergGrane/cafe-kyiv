@@ -1,6 +1,7 @@
 import random
 from django.shortcuts import render,redirect
-from .models import Category,Dish,Why,Events,About,Chefs,Gallery,Contactus,Contmail,Contphone,UserReservation,TestoMonial
+from .models import Category,Dish,Why,Events,About,Chefs,Gallery,Contactus,Contmail,Contphone,UserReservation,\
+    TestoMonial,Slides,BestTest
 from .forms import UserReservationForm,TestoMonialForm
 
 
@@ -30,10 +31,12 @@ def main_page(request):
     contmail = Contmail.objects.filter(is_visible=True).order_by('position')
     contphone = Contphone.objects.filter(is_visible=True).order_by('position')
     testomonial = TestoMonialForm()
+    slides = Slides.objects.order_by('name')
+    besttest = BestTest.objects.order_by('name')
 
     return render(request,'main.html', context={'categories': categories, 'dishes':dishes,'special':special,
         'whyus':whyus, 'events': events, 'about': about,'chefs': chefs, 'gallery':gallery,
         'contact': contact,'contmail':contmail, 'contphone':contphone,'reservation':reservation,
-        'testomonial': testomonial})
+        'testomonial': testomonial, 'slides':slides, 'besttest': besttest})
 
 

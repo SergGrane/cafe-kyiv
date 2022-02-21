@@ -262,3 +262,26 @@ class UserReservation(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.phone} {self.message[:30]}'
+
+class Slides(models.Model):
+    name = models.CharField(max_length=50, unique=True, db_index=True)
+    rows = models.TextField(max_length=500, blank=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return f'{self.name} {self.rows[:30]}'
+
+class BestTest(models.Model):
+    name = models.CharField(max_length=50, db_index=True)
+    profession = models.CharField(max_length=50)
+    message = models.TextField(max_length=500, blank=True)
+    is_visible = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return f'{self.name} {self.profession} {self.message[:30]}'
+
