@@ -57,7 +57,7 @@ class UserReservationForm(forms.ModelForm):
     phone = forms.CharField(max_length=15,
                             widget=forms.TextInput(
                                 attrs={'type': 'text', 'name': 'phone', 'id': 'phone', 'class': 'form-control',
-                                       'placeholder': 'Телефон', 'required': 'required',
+                                       'placeholder': 'Phone', 'required': 'required',
                                        'data-rule': 'minlen:4', 'data-msg': 'Please enter at least 4 chars'}))
     persons = forms.IntegerField(widget=forms.NumberInput(attrs={
         'type': "number",
@@ -71,7 +71,7 @@ class UserReservationForm(forms.ModelForm):
     message = forms.CharField(max_length=400,
                               widget=forms.Textarea(
                                   attrs={'type': 'message', 'name': 'message', 'class': 'form-control',
-                                         'rows': '5', 'placeholder': 'Сообщение', 'required': 'required'}))
+                                         'rows': '5', 'placeholder': 'Message', 'required': 'required'}))
 
 
     class Meta:
