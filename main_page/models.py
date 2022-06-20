@@ -245,7 +245,7 @@ class TestoMonial(models.Model):
         ordering = ('-date',)
 
     def __str__(self):
-        return f'{self.name} {self.mail} {self.message[:30]}'
+        return f'{self.name} {self.mail} {self.subj} {self.message[:60]}'
 
 class UserReservation(models.Model):
     mobile_regex = RegexValidator(regex=r'^(\d{3}[- .]?){2}\d{4}$', message='Phone in format xxx xxx xxxx')

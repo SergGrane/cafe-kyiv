@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+<section id ='messages'>
+    <div class="col-md-10 col-md-offset-1" >
+    <div style="background-color: #4f5050">
+    <br>
+    <br>
+    </div>
+    <br>
+    <br>
+    {% for item in lst1 %}
+     <div class ="row">
+        <div class="col-md-3"> <a href="{% url 'manager:update_mes' pk=item.pk %}"> <button type="button" class="btn btn-primary"> Message answered </button></a> </div>
+        <div class="col-md-3">{{ item.name }}</div>
+        <div class="col-md-3">{{ item.mail }}</div>
+         <div class="col-md-3">{{ item.subj }}</div>
+        <div class="col-md-3">{{ item.date|date:'d-m-y' }}</div>
+     </div>
+
+    {% endfor %}
+    </div>
+
+</section>
+{% endblock %}
