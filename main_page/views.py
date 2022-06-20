@@ -26,7 +26,7 @@ def main_page(request):
     about = About.objects.filter(is_visible=True)[:1]
     chefs = Chefs.objects.filter(is_visible=True).order_by('position')[:3]
     gallery = Gallery.objects.filter(is_visible=True).order_by('position')
-    gallery = random.sample(sorted(gallery), k=8)
+    # gallery = random.sample(sorted(gallery), k=8)
     contact = Contactus.objects.filter(is_visible=True)[:1]
     contmail = Contmail.objects.filter(is_visible=True).order_by('position')
     contphone = Contphone.objects.filter(is_visible=True).order_by('position')
