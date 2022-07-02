@@ -11,7 +11,7 @@
             <ul id="menu-flters">
                 <li data-filter="*" class="filter-active">All dishes</li>
               {% for item in categories %}
-                 <li data-filter=".filter-{{ item.id }}">{{ item.name }}</li>
+                 <li data-filter=".filter{{ item.id }}">{{ item.name }}</li>
                 {% endfor %}
             </ul>
           </div>
@@ -19,7 +19,7 @@
 
         <div class="row menu-container">
             {% for dish in dishes %}
-          <div class="col-lg-6 menu-item filter-{{ dish.category.id }}">
+          <div class="col-lg-6 menu-item filter{{ dish.category.id }}">
             <div class="menu-content">
               <a href="#">{{ dish.name }}</a><span>{{ dish.price }}</span>
             </div>
